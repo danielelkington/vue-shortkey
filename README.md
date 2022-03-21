@@ -1,20 +1,23 @@
-![vue-shortkey logo](https://github.com/iFgR/vue-shortkey/blob/master/logo/shortkey.png?raw=true)
+![vue-shortkey logo](https://github.com/danielelkington/vue-shortkey/blob/master/logo/shortkey.png?raw=true)
 
-![CircleCI status](https://circleci.com/gh/iFgR/vue-shortkey.svg?style=shield&circle-token=:circle-token)
-[![npm version](https://badge.fury.io/js/vue-shortkey.svg)](https://badge.fury.io/js/vue-shortkey)
-[![npm](https://img.shields.io/npm/dt/vue-shortkey.svg)](https://www.npmjs.com/package/vue-shortkey)
+[![npm version](https://badge.fury.io/js/vue-three-shortkey.svg)](https://badge.fury.io/js/vue-three-shortkey)
+[![npm](https://img.shields.io/npm/dt/vue-three-shortkey.svg)](https://www.npmjs.com/package/vue-three-shortkey)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-Vue-ShortKey - plugin for VueJS 2.x accepts shortcuts globaly and in a single listener.
+Fork of [vue-shortkey](https://github.com/iFgR/vue-shortkey) with Vue 3 support.
+
+Useful if you were previously using vue-shortkey in a Vue 2 project and you want to upgrade to Vue 3 without hassle - you should be able to switch to this npm package and update import statements, and apart from that this should be 100% compatible with your existing code.
+
+Vue-Three-ShortKey - plugin for VueJS 3.x that accepts shortcuts globally and in a single listener.
 
 ## Install
 ```
-npm install vue-shortkey --save
+npm install vue-three-shortkey --save
 ```
 
 ## Usage
 ```javascript
-Vue.use(require('vue-shortkey'))
+app.use(require('vue-three-shortkey'))
 ```
 Add the shortkey directive to the elements that accept the shortcut.
 The shortkey must have explicitly which keys will be used.
@@ -121,17 +124,17 @@ You can make any combination of keys as well as reserve a single key.
 You can avoid shortcuts within fields if you really need it. This can be done in two ways:
 * Preventing a given element from executing the shortcut by adding the **v-shortkey.avoid** tag in the body of the element
 ```html
-<textarea v-shortkey.avoid></textaea>
+<textarea v-shortkey.avoid></textarea>
 ```
 * Generalizing type of element that will not perform shortcut. To do this, insert a list of elements in the global method.
 
 ```javascript
-Vue.use('vue-shortkey', { prevent: ['input', 'textarea'] })
+app.use('vue-three-shortkey', { prevent: ['input', 'textarea'] })
 ```
 
 * Or even by class
 ```javascript
-Vue.use('vue-shortkey', { prevent: ['.my-class-name', 'textarea.class-of-textarea'] })
+app.use('vue-three-shortkey', { prevent: ['.my-class-name', 'textarea.class-of-textarea'] })
 ```
 
 #### Other uses
@@ -148,28 +151,6 @@ With the dynamism offered by Vue, you can easily create shortcuts dynamically
   </a>
 </li>
 ```
-
-#### Integrating with Nuxt
-
-Create `/plugins/vue-shortkey.js` and add the following to it
-
-```javascript
-import Vue from 'vue'
-const ShortKey = require('vue-shortkey')
-
-// add any custom shortkey config settings here
-Vue.use(ShortKey, { prevent: ['input', 'textarea'] })
-
-export default ShortKey
-```
-
-Load the plugin in `nuxt.config.js`:
-
-```javascript
-plugins: [ { src: '@/plugins/vue-shortkey.js', mode: 'client' }]
-```
-
-The `mode: 'client'` is necessary to prevent Nuxt from loading the plugin during server-side rendering (SSR).
 
 ### Unit Test
 ```

@@ -1,7 +1,7 @@
 {
-  "name": "vue-shortkey",
-  "description": "A plugin for VueJS 2.x accepts shortcuts globaly and in a single listener.",
-  "version": "3.1.8",
+  "name": "vue-three-shortkey",
+  "description": "A plugin for VueJS 3.x accepts shortcuts globally and in a single listener.",
+  "version": "0.1.0",
   "author": "iFgR <ifgr.fagner@gmail.com>",
   "main": "dist/index.js",
   "license": "MIT",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iFgR/vue-shortkey.git"
+    "url": "git+https://github.com/danielelkington/vue-shortkey.git"
   },
   "dependencies": {
     "custom-event-polyfill": "^1.0.7",
@@ -24,7 +24,7 @@
     "shortcut",
     "shortkey"
   ],
-  "homepage": "https://github.com/iFgR/vue-shortkey/blob/master/README.md",
+  "homepage": "https://github.com/danielelkington/vue-shortkey/blob/release/README.md",
   "devDependencies": {
     "array.prototype.find": "^2.0.4",
     "babel-core": "^6.0.0",
