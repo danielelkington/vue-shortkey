@@ -15,7 +15,6 @@
     "url": "git+https://github.com/danielelkington/vue-shortkey.git"
   },
   "dependencies": {
-    "custom-event-polyfill": "^1.0.7",
     "element-matches": "^0.1.2"
   },
   "keywords": [
